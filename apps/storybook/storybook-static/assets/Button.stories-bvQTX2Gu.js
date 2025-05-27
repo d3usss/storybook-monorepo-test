@@ -1,3 +1,0 @@
-import{f as c}from"./index-BEO02Wfb.js";import{j as m}from"./jsx-runtime-D_zvdyIk.js";const u="_button_10oad_1",p={button:u};function i(e){const{className:s,...n}=e;return m.jsx("button",{type:"button",className:`${s} ${p.button}`,...n,children:"Button"})}const f={title:"Example/Button",component:i,parameters:{layout:"centered"},tags:["autodocs"],argTypes:{},args:{onClick:c()}},t={args:{}};var r,o,a;t.parameters={...t.parameters,docs:{...(r=t.parameters)==null?void 0:r.docs,source:{originalSource:`{
-  args: {}
-}`,...(a=(o=t.parameters)==null?void 0:o.docs)==null?void 0:a.source}}};const g=["Primary"];export{t as Primary,g as __namedExportsOrder,f as default};
