@@ -21,7 +21,13 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
-  "include": ["./lib/main.ts", "./lib/global.d.ts"]
+  "include": ["src/main.ts", "src/global.d.ts", "src/**/*.ts", "src/**/*.tsx"],
 }

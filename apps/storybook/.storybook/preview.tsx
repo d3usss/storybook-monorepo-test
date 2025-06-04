@@ -3,17 +3,6 @@ import type { Preview } from "@storybook/react";
 
 import "component-library/dist/assets/component-library.css";
 
-export const globalTypes = {
-  theme: {
-    name: "Theme",
-    description: "Select project theme",
-    defaultValue: "theme-a",
-    toolbar: {
-      icon: "paintbrush",
-      items: ["theme-a", "theme-b", "theme-c"],
-    },
-  },
-};
 const preview: Preview = {
   parameters: {
     controls: {
@@ -27,13 +16,8 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story, { context }) => {
-      const theme = context.globals.theme;
-      return (
-        <div data-theme={theme}>
-          <Story />
-        </div>
-      );
+    (Story) => {
+      return <Story />;
     },
   ],
 };
