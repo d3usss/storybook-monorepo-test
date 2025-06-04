@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006 --no-open",
-    "build": "storybook build"
+    "build": "storybook build",
+    "build-storybook": "storybook build",
+    "chromatic": "dotenv -e .env.local -- pnpx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
+    "component-library": "workspace:*",
     "next": "15.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "component-library": "workspace:*"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -25,6 +27,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chromatic": "^12.1.0",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "eslint-plugin-storybook": "^0.12.0",
