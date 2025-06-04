@@ -1,17 +1,18 @@
 "use client";
-import styles from "./Button.module.css";
 
 export default function Button(
   props: React.ButtonHTMLAttributes<HTMLButtonElement>
 ) {
   const { className, ...restProps } = props;
   return (
-    <button
-      type="button"
-      className={`${className} ${styles.button}`}
-      {...restProps}
-    >
-      Button 3
-    </button>
+    <div className="bg-(--color-primary)">
+      <button
+        type="button"
+        className={`${className || ""} border-2 border-amber-900 p-(--padding-small)`}
+        {...restProps}
+      >
+        Button 3
+      </button>
+    </div>
   );
 }

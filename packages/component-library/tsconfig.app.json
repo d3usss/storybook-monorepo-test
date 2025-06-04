@@ -23,5 +23,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["./lib/main.ts"]
+  "include": ["./lib/main.ts", "./lib/global.d.ts"]
 }
