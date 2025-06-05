@@ -7,8 +7,8 @@ jobs:
     name: Run Chromatic
     runs-on: ubuntu-latest
     defaults:
-    run:
-      working-directory: apps/storybook
+      run:
+        working-directory: apps/storybook
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
