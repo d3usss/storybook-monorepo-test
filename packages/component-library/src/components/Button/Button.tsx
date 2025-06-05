@@ -9,7 +9,7 @@ export default function Button(
   return (
     <MuiButton
       type="button"
-      className={`${className || ""} bg-amber-300`}
+      className={`${className || ""} bg-amber-900`}
       {...restProps}
     >
       Button 3
