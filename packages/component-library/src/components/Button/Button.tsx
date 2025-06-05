@@ -7,7 +7,11 @@ export default function Button(
 ) {
   const { className, ...restProps } = props;
   return (
-    <MuiButton type="button" className={`${className || ""}`} {...restProps}>
+    <MuiButton
+      type="button"
+      className={`${className || ""} bg-blue-400`}
+      {...restProps}
+    >
       Button 3
     </MuiButton>
   );
