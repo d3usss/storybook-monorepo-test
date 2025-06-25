@@ -12,7 +12,7 @@
     "dev": "tsc -p ./tsconfig.build.json --watch & vite build --watch",
     "build": "tsc -p ./tsconfig.build.json && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "vite preview"
   },
   "peerDependencies": {
     "next": "15.3.2",
