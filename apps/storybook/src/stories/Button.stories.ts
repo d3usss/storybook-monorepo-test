@@ -14,7 +14,34 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {},
+  argTypes: {
+    variant: {
+      control: { type: "select" },
+      options: ["primary", "secondary"],
+      description: "The variant of the button",
+    },
+    className: {
+      control: { type: "text" },
+      description: "Additional CSS classes to apply to the button",
+    },
+    children: {
+      control: { type: "text" },
+      description: "Content inside the button",
+    },
+    type: {
+      control: { type: "select" },
+      options: ["button", "submit", "reset"],
+      description: "The type of the button",
+    },
+    onClick: {
+      action: "clicked",
+      description: "Function to call when the button is clicked",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Whether the button is disabled",
+    },
+  },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -24,5 +51,31 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {},
+  args: {
+    variant: "primary",
+    children: "Primary Button",
+    className: "custom-class",
+    type: "button",
+    disabled: false,
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+    children: "Secondary Button",
+    className: "custom-class",
+    type: "button",
+    disabled: false,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    variant: "primary",
+    children: "Disabled Button",
+    className: "custom-class",
+    type: "button",
+    disabled: true,
+  },
 };
