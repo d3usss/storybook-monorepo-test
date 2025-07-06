@@ -19,6 +19,7 @@ module.exports = [
       },
     ],
     plugins: [
+      preserveDirectives(),
       peerDepsExternal(), // automatically peer dependencies listed in package.json
       resolve(), // allows rollup to find and bundle dependencies from node_modules
       commonjs(), // converts commonJs modules to ES6 so that they can be included in rollup bundle
@@ -28,8 +29,7 @@ module.exports = [
         minimize: true,
         sourceMap: true,
       }),
-      preserveDirectives(), // Preserves directives in the source code, useful for keeping comments and other directives intact
-      terser(), // minifies the final js bundle to reduce its size
+      // Preserves directives in the source code, useful for keeping comments and other directives intact
     ],
     external: ["react", "react-dom"],
   },
