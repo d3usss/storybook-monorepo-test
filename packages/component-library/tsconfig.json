@@ -19,5 +19,5 @@
     }
   },
   "include": ["src/**/*"], // Include all `.ts` and `.tsx` files in the `src` folder
-  "exclude": ["node_modules", "dist"] // Exclude `node_modules` and the output directory
+  "exclude": ["node_modules", "dist", "src/styles/"] // Exclude `node_modules` and the output directory
 }

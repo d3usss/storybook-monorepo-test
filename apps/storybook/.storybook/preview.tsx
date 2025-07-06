@@ -1,7 +1,7 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
 
-import "component-library/dist/assets/component-library.css";
+import "component-library/dist/index.css"; // Import the bundled CSS from the component library
 
 const preview: Preview = {
   parameters: {
