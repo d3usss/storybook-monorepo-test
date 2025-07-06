@@ -1,14 +1,23 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.build.json" }
-  ],
   "compilerOptions": {
+    "target": "ES5", // Target ECMAScript version
+    "module": "ESNext", // Module system, compatible with ESNext for bundlers like Rollup
+    "jsx": "react-jsx", // JSX support
+    "declaration": true, // Emit `.d.ts` declaration files
+    "declarationDir": "./dist/types", // Directory to output the generated `.d.ts` files
+    "outDir": "./dist", // Output directory for `.js` files
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Enable `import` and `export` interop between ES Modules and CommonJS
+    "skipLibCheck": true, // Skip type checking for declaration files (faster compilation)
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in import paths
+    "moduleResolution": "node", // Resolve modules using Node.js conventions
+    "isolatedModules": true, // Ensures each file is treated as a separate module
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["src/**/*"], // Include all `.ts` and `.tsx` files in the `src` folder
+  "exclude": ["node_modules", "dist"] // Exclude `node_modules` and the output directory
 }
