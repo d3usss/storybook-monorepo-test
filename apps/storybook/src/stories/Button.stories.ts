@@ -1,22 +1,50 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
-import { Button } from "component-library";
+import { Button } from 'component-library';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/Button",
-  component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {},
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+    title: 'Example/Button',
+    component: Button,
+    parameters: {
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        layout: 'centered',
+    },
+    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+    tags: ['autodocs'],
+    // More on argTypes: https://storybook.js.org/docs/api/argtypes
+    argTypes: {
+        children: {
+            description: 'Button text or content',
+        },
+        className: {
+            control: {
+                type: 'text',
+            },
+            type: 'string',
+            description: 'Additional CSS classes to apply to the button',
+        },
+        type: {
+            control: {
+                type: 'select',
+                options: ['button', 'submit', 'reset'],
+            },
+            description: 'Type of the button',
+        },
+        onClick: {
+            action: 'clicked',
+            description: 'Function to call when the button is clicked',
+        },
+        disabled: {
+            control: {
+                type: 'boolean',
+            },
+            description: 'Disables the button when true',
+        },
+    },
+    // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+    args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -24,5 +52,32 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {},
+    args: {
+        children: 'Primary Button',
+        className: 'bg-blue-800 text-white  border-blue-900 hover:bg-blue-950 ',
+    },
+};
+
+export const Secondary: Story = {
+    args: {
+        children: 'Secondary Button',
+        className:
+            'bg-green-400 text-green-900 border-green-500 hover:bg-green-300  ',
+    },
+};
+
+export const Error: Story = {
+    args: {
+        children: 'Secondary Button',
+        className: 'bg-red-300 text-red-800  border-red-800 hover:bg-red-200  ',
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        children: 'Disabled Button',
+        className:
+            'bg-gray-500 text-gray-100  border-black /*hover:bg-gray-400*/',
+        disabled: true,
+    },
 };
