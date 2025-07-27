@@ -1,33 +1,33 @@
 "use client";
 
-import { Button as MuiButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
-interface ButtonProps {
+interface ButtonComponentProps {
   className?: string;
+  children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
-  children?: React.ReactNode;
 }
 
-export default function Button({
+export default function ButtonComponent({
   className,
+  children,
   type,
   onClick,
-  children,
-}: ButtonProps) {
-  const handleClick = () => {
+}: ButtonComponentProps) {
+  const handleOnClick = () => {
     if (onClick) {
       onClick();
     }
   };
 
   return (
-    <MuiButton
+    <Button
+      className={`${className || ""} bg-blue-600`}
       type={type || "button"}
-      className={`bg-blue-600 ${className || ""}`}
-      onClick={handleClick}
+      onClick={handleOnClick}
     >
       {children}
-    </MuiButton>
+    </Button>
   );
 }
